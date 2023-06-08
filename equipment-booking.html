@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <title>حجز المعدات الطبية</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+/* تعيين خصائص النص العامة */
+body {
+  font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+/* تعيين خصائص العناصر .equipment */
+.equipment {
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 20px #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+}
+
+/* تعيين خصائص العناصر .equipment عند تحويل المؤشر إليه */
+.equipment:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px #ccc;
+}
+
+/* تعيين خصائص الصورة داخل العنصر .equipment */
+.equipment img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* تعيين خصائص جسم العنصر .equipment */
+.equipment .mt-3 {
+  margin-top: 1rem;
+}
+
+/* تعيين خصائص عنوان العنصر .equipment */
+.equipment h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align:center;
+}
+
+/* تعيين خصائص نص العنصر .equipment */
+.equipment p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align:center;
+}
+
+/* تعيين خصائص السعر في العنصر .equipment */
+.equipment h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f00;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align:center;
+}
+
+/* تعيين خصائص زر الحجز في العنصر .equipment */
+.equipment button {
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* تعيين خصائص زر الحجز في العنصر .equipment عند تحويل المؤشر إليه */
+.equipment button:hover {
+  background-color: #fff;
+  color: #f00;
+  border: 1px solid #f00;
+}
+
+.booking-form {
+			padding: 30px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 20px #ccc;
+		}
+		.booking-form h2 {
+			font-size: 32px;
+			font-weight: 700;
+			margin-bottom: 30px;
+			color: #333;
+			text-align: center;
+		}
+		.booking-form .form-group {
+			margin-bottom: 20px;
+			text-align: right;
+		}
+
+		.booking-form label {
+			font-weight: 700;
+			color: #333;
+			margin-bottom: 10px;
+			text-align:left;
+			text-align: right;
+
+		}
+		.booking-form input[type="text"],
+		.booking-form input[type="email"],
+		.booking-form input[type="tel"],
+		.booking-form input[type="number"],
+		.booking-form select,
+		.booking-form input[type="date"],
+		.booking-form input[type="time"] {
+			height: 50px;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			font-size: 18px;
+			color:#333;
+			box-shadow: 0px 0px 10px #ccc;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.booking-form button[type="submit"] {
+			background-color: #f00;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 700;
+			border-radius: 5px;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			width: 100%;
+		}
+		.booking-form button[type="submit"]:hover {
+			background-color: #fff;
+			color: #f00;
+			border: 2px solid #f00;
+		}
+			.title-bg {
+			
+			padding: 10px;
+			text-align: center;
+			
+			font-weight: 700;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title-bg text-white">المعدات الطبية</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/png-images/qianku/medical-equipment-stethoscope_2396947.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">سماعة طبية </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">السعر: $100</h3>
+         
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/png-images/qianku/public-medical-supplies-illustration_2087795.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">جهاز طبي </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">السعر: $150</h3>
+          
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/origin/09/09/59/75RpIkbEsTNjH.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">صندوق أدوية </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">السعر: $200</h3>
+         
+        </div>
+      </div>
+	      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/png-images/qianku/medical-tool-oxygen-bag-illustration_1960570.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">كيس أكسجين </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">لسعر: $200</h3>
+         
+        </div>
+      </div>
+	      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/png-images/qiantu/public-medical-crutches-illustration_2609527.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">عكاز طبي </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">السعر: $200</h3>
+         
+        </div>
+      </div>
+	      <div class="col-md-4">
+        <div class="equipment">
+          <img src="https://img.pikbest.com/png-images/qianku/medical-oxygen-machine_2170430.png!f305cw" alt="Equipment Image" class="img-fluid">
+          <h2 class="mt-3">الة أكسجين طبي </h2>
+          <p class="mb-3">وصف مختصر للمعدة</p>
+          <h3 class="mb-3">السعر: $200</h3>
+         
+        </div>
+      </div>
+    </div>
+	<div class="container">
+		<h2 class="text-center mb-5">حجز معدة طبية الان  </h2>
+		<form class="booking-form">
+			<div class="form-group">
+				<label for="name">الاسم الكامل:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+				<label for="email">البريد الإلكتروني:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="phone">رقم الهاتف:</label>
+				<input type="tel" id="phone" name="phone" required>
+			</div>
+			<div class="form-group">
+				<label for="date">تاريخ الحجز:</label>
+				<input type="date" id="date" name="date" required>
+			</div>
+			<div class="form-group">
+				<label for="time">وقت الحجز:</label>
+				<input type="time" id="time" name="time" required>
+			</div>
+			<div class="form-group">
+				<label for="car-type">نوع المعدة:</label>
+				<select id="car-type" name="car-type" required>
+					<option value="">--اختر النوع--</option>
+					
+					<option value="نوع المعدة 1">معدة1 </option>
+					<option value="نوع المعدة 2">معدة2</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="qua">الكمية :</label>
+				<input type="number" id="qua" name="qua" required>
+			</div>
+			<button type="submit">حجز </button>
+		</form>
+	</div>
+    </div>
+  </div>
+</body>
+
+</html>

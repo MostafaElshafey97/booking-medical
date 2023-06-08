@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap file css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Plugins file css-->
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/jquery-nao-calendar.css">
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&display=swap" rel="stylesheet">
+    <!--main file css-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title> برنامج الحجوزات الطبية</title>
+    <style>
+        body {
+			
+			font-size: 16px;
+			
+			background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+        .title-bg {
+			background-image: url('path/to/image.jpg');
+			padding: 10px;
+			text-align: center;
+			font-size: 200px;
+			font-weight: 700;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+h1, h2, h3, h4,h6 {
+			font-weight: 700;
+			color: #fff;
+		}
+		.container-fluid {
+			/* background-color: #333; */
+			padding: 60px 0;
+			margin-bottom: 30px;
+		}
+		.text-white {
+			color: #fff;
+		
+		}
+        .py-5 {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+			color: #000;
+			
+		}
+		.car {
+			margin-bottom: 30px;
+			box-shadow: 0px 0px 20px #ccc;
+			border-radius: 5px;
+			overflow: hidden;
+			transition: all 0.3s ease;
+		}
+		.car:hover {
+			transform: translateY(-5px);
+			box-shadow: 0px 10px 20px #ccc;
+		}
+		.car .card-img img {
+			max-width: 100%;
+			height: auto;
+		}
+		.car .card-body {
+			padding: 20px;
+			text-align: center;
+			background-color: #fff;
+		}
+		.car .card-title {
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+		.car .card-text {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+		.car .card-price {
+			font-size: 24px;
+			font-weight: 700;
+			color: #f00;
+			margin-top: 20px;
+			margin-bottom:15px;
+		}
+			.car .card-type {
+			font-size: 20px;
+			font-weight: 700;
+			color: blue;
+			margin-top: 20px;
+			margin-bottom:15px;
+		}
+
+.button-link {
+    display: inline-block;
+    background-color: #2D3E50;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    width: 350px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.container a:hover {
+   
+    color: #dd1c1c;
+ 
+
+    /* .bg:hover{
+    color: #B61F22; */
+}
+.booking-form {
+			padding: 30px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 20px #ccc;
+		}
+		.booking-form h2 {
+			font-size: 32px;
+			font-weight: 700;
+			margin-bottom: 30px;
+			color: #333;
+			text-align: center;
+		}
+		.booking-form .form-group {
+			margin-bottom: 20px;
+			text-align: right;
+		}
+
+		.booking-form label {
+			font-weight: 700;
+			color: #333;
+			margin-bottom: 10px;
+			text-align:left;
+			text-align: right;
+
+		}
+		.booking-form input[type="text"],
+		.booking-form input[type="email"],
+		.booking-form input[type="tel"],
+		.booking-form select,
+		.booking-form input[type="date"],
+		.booking-form input[type="time"] {
+			height: 50px;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			font-size: 18px;
+			color:#333;
+			box-shadow: 0px 0px 10px #ccc;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.booking-form button[type="submit"] {
+			background-color: #f00;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 700;
+			border-radius: 5px;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			width: 100%;
+		}
+		.booking-form button[type="submit"]:hover {
+			background-color: #fff;
+			color: #f00;
+			border: 2px solid #f00;
+		}
+
+
+    </style>
+</head>
+
+<body>
+    <!--Loading Page-->
+    <div class="loading-page">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!--header section-->
+    <section class="header">
+        <!--top-bar-->
+        <div class="top-bar py-2">
+            <div class="container">
+                <!--row of top-bar-->
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <!-- <a href="index.html" class="ar px-1">عربى</a>
+                        <a href="" class="en px-1">EN</a> -->
+                    </div>
+                    <div>
+                        <ul class="list-unstyled">
+                            <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="connect">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span> مرحبا بك </span> &nbsp; &nbsp;ميمي محمد
+                            </a>
+                            <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="index.html">  <i class="fas fa-home ml-2"></i>الرئيسيه</a>
+                              <a class="dropdown-item" href="#"> <i class="fas fa-user-alt ml-2"></i>معلوماتى</a>
+                              <!-- <a class="dropdown-item" href="#"> <i class="fas fa-bell ml-2"></i>اعدادات الاشعارات</a>
+                              <a class="dropdown-item" href="#"> <i class="far fa-heart ml-2"></i>المفضلة</a> -->
+                              <a class="dropdown-item" href="#"> <i class="far fa-comments ml-2"></i>ابلاغ</a>
+                              <a class="dropdown-item" href="contact.html"> <i class="fas fa-phone ml-2"></i>تواصل معنا</a>
+                              <a class="dropdown-item" href="#"> <i class="fas fa-sign-out-alt ml-2"></i>خروج</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </div>
+        <!--End top-bar-->
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="" width="50" height="50"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">الرئيسيه <span class="sr-only">(current)</span></a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">عن بنك الدم</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="article-details.html">المقالات</a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">من نحن</a>
+                        </li>
+                        <li class="nav-item cont">
+                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                        </li>
+                        <li class="mr-lg-auto py-md-2"><a class="signin" href="signup.html">انشاء حساب جديد</a></li>
+                        <li class="pr-3"><a class="btn bg px-3" href="signin.html">دخول</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--End container-->
+        </nav>
+        <!--End Nav-->
+        <!--main-header-->
+       
+        <!--End main-header-->
+    </section>
+    <!--End Header-->
+    <!--About section-->
+<div class="title-bg">
+		<h1 style="color:rgb(8, 8, 8);">حجز الاسعاف </h1>
+	</div>
+	<div class="container-fluid">
+		<div class="container">
+			
+			<div class="row">
+				<!-- عرض السيارات الإسعاف -->
+				<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/png-images/qiantu/cartoon-hand-drawn-ambulance-commercial-elements_2543752.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title"> سيارة إسعاف الطوارئ الطبي (ALS)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 200 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(داخلي)</div>
+						</div>
+					</div>
+				</div>
+								<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/png-images/ambulance-clipart-flat-icon_5883237.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">سيارة إسعاف الطوارئ الطبي المتقدم (A-EMT)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 200 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(خارجي)</div>
+						</div>
+					</div>
+				</div>
+					<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/png-images/qiantu/medical-equipment-realistic-ambulance-emergency-car-120-elements-are-commercially-available_2558419.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">سيارة الإسعاف النقل الأساسي (BLS)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 200 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(خارجي)</div>
+						</div>
+					</div>
+				</div>
+								<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/origin/09/08/06/54cpIkbEsTNI4.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">سيارة الإسعاف النقل الطويل (LLS)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 200 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(داخلي)</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/png-images/qiantu/cartoon-ambulance-decoration-illustration_2606694.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">سيارة الإسعاف الجوي (air ambulance)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 150 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(داخلي)</div>
+						</div>
+					</div>
+				</div>
+									<div class="col-md-4">
+					<div class="car">
+						<div class="card-img">
+							<img src="https://img.pikbest.com/png-images/qiantu/first-aid-geometric-vector-emergency-car_2656694.png!f305cw" alt="صورة السيارة">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">سيارة الإسعاف المتنقلة (mobile ambulance)
+							</h3>
+							<p class="card-text">وصفات السيارة ومميزاتها:</p>
+							<ul class="card-text">
+								<li>تصلح للإسعافات الطارئة</li>
+								<li>مجهزة بالأجهزة الطبية اللازمة</li>
+								<li>تحتوي على سرير للمريض ومقعد للمسعف</li>
+								<li>تتسع لشخصين</li>
+							</ul>
+							<div class="card-price">السعر: 200 ريال/ساعة</div>
+							<div class="card-type">نوع الاستخدام :(خارجي)</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+
+    <div class="">
+		<h2 style="color:rgb(7, 7, 7);text-align: center;">احجز الإسعاف الآن</h2>
+		<form class="booking-form">
+			<div class="form-group">
+				<label for="name">الاسم الكامل:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+				<label for="email">البريد الإلكتروني:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="phone">رقم الهاتف:</label>
+				<input type="tel" id="phone" name="phone" required>
+			</div>
+			<div class="form-group">
+				<label for="date">تاريخ الحجز:</label>
+				<input type="date" id="date" name="date" required>
+			</div>
+			<div class="form-group">
+				<label for="time">وقت الحجز:</label>
+				<input type="time" id="time" name="time" required>
+			</div>
+			<div class="form-group">
+				<label for="car-type">نوع السيارة:</label>
+				<select id="car-type" name="car-type" required>
+					<option value="">--اختر النوع--</option>
+					
+					<option value="نوع السيارة 1">نوع السيارة 1</option>
+					<option value="نوع السيارة 2">نوع السيارة 2</option>
+				</select>
+			</div>
+			<div class="form-group">
+			<label for="car-location">موقع السيارة:</label>
+    <input type="radio" id="domestic" name="usage-type" value="داخلي">
+    <label for="domestic">داخلي</label>
+
+    <input type="radio" id="international" name="usage-type" value="خارجي">
+    <label for="international">خارجي</label>
+
+    <div id="city-field" style="display:none;">
+      <label for="city">المدينة:</label>
+      <select id="city" name="city">
+        <option value="طرابلس">طرابلس</option>
+        <option value="بنغازي">بنغازي</option>
+        <option value="مصراتة">مصراتة</option>
+      </select>
+    </div>
+
+    <div id="country-field" style="display:none;">
+      <label for="country">الدولة:</label>
+      <select id="country" name="country">
+        <option value="مصر">مصر </option>
+        <option value="تونس">تونس  </option>
+        <option value="المفرب">المغرب</option>
+      </select>
+    </div>
+	
+	
+			<button type="submit" style="background-color: #2D3E50;">
+            حجز الإسعاف</button>
+		</form>
+	</div>
+    
+
+    <footer>
+        <div class="main-footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="imgs/logo.png" alt="" width="100" height="100">
+                        <h5 style="color:rgb(226, 17, 17);"> الحجوزات الطبية</h5>
+                        <p style="color:powderblue;"> هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد
+                            هذا النص من مولد النص العرب حيث يمكنك ان تولد هذا النص أو
+                            العديد من النصوص الأخرى وإضافة الى زيادة عدد الحروف التى يولدها التطبيق يطلع على صورة حقيقة
+                            لتطبيق
+                            الموقع
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="px-md-5 mt-md-3">الرئيسية</h6>
+                        <ul class="list-unstyled">
+                            <li class="py-2"><a href="">عن  الحجوزات الطبية</a></li>
+                            <li class="py-2"><a href="article-details.html">المقالات</a></li>
+                            <li class="py-2"><a href="about-us.html">من نحن</a></li>
+                            <li class="py-2"><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 available">
+                        <h6 class="mb-5 mt-md-3 px-md-5">متوفر على</h6>
+                        <div class="my-3"><img src="imgs/google1.png" alt=""></div>
+                        <div class="my-3"><img src="imgs/ios1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <!--End container-->
+        </div>
+        <!--End main-footer-->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled pt-sm-3 py-md-3">
+                            <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="mx-5 py-md-3">جميع الحقوق محفوظه لـ <span> الحجوزات الطبية</span> &copy; 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+    <!--scrollUp-->
+    <div class="scrollUp">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+    <!--jquery/bootstrap/main file js-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery-nao-calendar.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  
+	<script>
+      var usageType = document.getElementsByName("usage-type");
+     var cityField = document.getElementById("city-field");
+      var countryField = document.getElementById("country-field");
+
+      for (var i = 0; i < usageType.length; i++) {
+        usageType[i].addEventListener("click", function() {
+          if (this.value === "داخلي") {
+            cityField.style.display = "block";
+            countryField.style.display = "none";
+          } else if (this.value === "خارجي") {
+            cityField.style.display = "none";
+            countryField.style.display = "block";
+          }
+        });
+      }
+    </script>
+</body>
+
+</html>

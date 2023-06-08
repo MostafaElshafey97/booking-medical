@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>حجز خدمات طبية</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+	<style>
+		body{
+			background-image: url('https://media.istockphoto.com/id/1061067602/photo/ambulance-car-on-blured-background-ambulance-auto-paramedic-emergency.jpg?s=1024x1024&w=is&k=20&c=PJ678uofdEP3Vc6lvtAsVEY11Ai1E6LmoEdkDuD_tZ0=');
+			background-size: cover;
+		}
+		.title-bg {
+			background-image: url('path/to/image.jpg');
+			padding: 50px;
+			text-align: center;
+			font-size: 150px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		.title-bg h1 {
+			font-size: 56px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+			color: #fff;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			margin-top: 0;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		.option {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+			padding: 3px;
+			background-color: #fff;
+			border-radius: 50px;
+			box-shadow: 0px 0px 10px #c5c5c5;
+			transition: all 0.3s ease-in-out;
+			cursor: pointer;
+			width:40%;
+		}
+		.option:hover {
+			background-color: #292929;
+			color: #fff;
+			box-shadow: 0px 0px 10px #292929;
+		}
+		.option h3 {
+			font-size: 24px;
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+		.option p {
+			font-size: 16px;
+			color: #666;
+			line-height: 1.5;
+			text-align: center;
+		}
+		.ad-container {
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px #c5c5c5;
+		display: inline-block;
+		justify-content: center;
+		align-items: center;
+	}
+	.ad-container img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+		.ad-container:hover img {
+			transform: scale(1.1);
+		}
+		.ad-container a {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+		.option-container {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: #e6e6e6;
+		border-radius: 5px;
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+			padding: 3px;
+			background-color: #fff;
+			border-radius: 50px;
+			box-shadow: 0px 0px 10px #c5c5c5;
+			transition: all 0.3s ease-in-out;
+			cursor: pointer;
+			width:40%;
+	}
+	.option-container:hover {
+		transform: scale(1.1);
+		opacity: 0.8;
+	}
+	nav.navbar {
+    background-color: rgba(0,0,0,0);
+	    border: none;
+    color: blue;
+		   
+
+
+}
+nav.navbar li a {
+    font-size: 20px;
+	direction: rtl;
+	    color: black;
+		color: blue;
+
+}
+nav.navbar li a:hover {
+    color: white;
+}
+.advertisement {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.advertisement img {
+    max-width: 100%;
+}
+.advertisement-vertical {
+    float: left;
+    width: 20%;
+    margin-right: 20px;
+}
+
+.advertisement-vertical img {
+    max-width: 100%;
+}
+.advertisement-vertical-top {
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    width: 20%;
+}
+
+.advertisement-vertical-top img {
+    max-width: 100%;
+}
+	</style>
+</head>
+<body>
+
+
+<div class="container-fluid">
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			</button>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">اتصل بنا</a></li>
+				<li><a href="#">من نحن</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">خدماتنا<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">حجز الإسعاف</a></li>
+						<li><a href="#">حجز التمريض</a></li>
+						<li><a href="#">حجز الأجهزة الطبية</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">الرئيسية</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> تسجيل دخول</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> خروج</a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+	<!-- عرض خلفية العنوان -->
+	<div class="title-bg">
+		<h1>حجز اسعاف وخدمات طبية  </h1>
+	</div>
+
+
+
+
+	<!-- عرض الخيارات الثلاثةة-->
+	<div class="container animate__animated animate__fadeInUp animate__delay-1s">
+
+		<div class="option-container hvr-fade hvr-grow" onclick="location.href='ambulance-booking.html';">
+			<h3>حجز الإسعاف</h3>
+			<p>تعرف على أنواع السيارات الإسعاف واحجز الآن!</p>
+		</div>
+		<div class="option-container hvr-fade hvr-grow" onclick="location.href='nursing-booking.html';">
+			<h3>حجز التمريض</h3>
+			<p>تعرف على خدمات التمريض واحجز الآن!</p>
+		</div>
+		<div class="option-container hvr-fade hvr-grow" onclick="location.href='equipment-booking.html';">
+			<h3>حجز الأجهزة الطبية</h3>
+			<p>تعرف على أنواع الأجهزة الطبية المتاحة واحجزها الآن!</p>
+		</div>
+	</div>
+	<!-- نهاية عرض الخيارات الثلاثة -->
+	<div class="advertisement">
+    <img src="https://i.pinimg.com/736x/5e/1e/d4/5e1ed4935fdb7702f26cb38a92bc21cf.jpg" alt="advertisement">
+</div>
+
+<div class="advertisement-vertical">
+    <img src="https://www.rabetweb.com/wp-content/uploads/2021/07/%D9%86%D9%85%D9%88%D8%B0%D8%AC-%D8%A7%D8%B9%D9%84%D8%A7%D9%86-%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A-%D8%AC%D8%A7%D9%87%D8%B2-%D9%84%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9.jpg" alt="advertisement">
+</div>
+
+<div class="advertisement-vertical-top">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3XwHKkB8LaGm-Y_BFA0C-nBLO2qDQVTHgtw&usqp=CAU" alt="advertisement">
+</div>
+</body>
+</html>

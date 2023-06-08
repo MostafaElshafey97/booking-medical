@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <title>حجز خدمات التمريض</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Plugins file css-->
+    <link rel="stylesheet" href="">
+
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&display=swap" rel="stylesheet">
+    <!--main file css-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <style>
+
+body {
+  background-color: #f5f5f5;
+
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+
+/* .container {
+  margin-top: 30px;
+} */
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.nurse {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+
+}
+.card-body h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f00;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align:center;
+}
+
+.nurse:hover {
+  cursor: pointer;
+  background-color: #fff;
+  transform: translateY(-5px);
+}
+
+.booking-form {
+			padding: 30px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 20px #ccc;
+		}
+		.booking-form h2 {
+			font-size: 32px;
+			font-weight: 700;
+			margin-bottom: 30px;
+			color: #333;
+			text-align: center;
+		}
+		.booking-form .form-group {
+			margin-bottom: 20px;
+			text-align: right;
+		}
+		.booking-form label {
+			font-weight: 700;
+			color: #333;
+			margin-bottom: 10px;
+		}
+		.booking-form input[type="text"],
+		.booking-form input[type="email"],
+		.booking-form input[type="tel"],
+		.booking-form select,
+		.booking-form input[type="date"],
+		.booking-form input[type="time"] {
+			height: 50px;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			font-size: 18px;
+			color:#333;
+			box-shadow: 0px 0px 10px #ccc;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.booking-form button[type="submit"] {
+			background-color: #f00;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 700;
+			border-radius: 5px;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			width: 100%;
+		}
+		.booking-form button[type="submit"]:hover {
+			background-color: #fff;
+			color: #f00;
+			border: 2px solid #f00;
+		}
+
+
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.doc-img {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 4px;
+}
+.doc-img img {
+    border-radius: 4px;
+	transform: translateZ(0);
+	transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
+    width: 100%;
+}
+.doc-img:hover img {
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    transform: scale(1.15);
+}
+
+.pro-content {
+    padding: 15px 0 0;
+    text-align: center;
+}
+.pro-content a {
+color: blue;
+    text-align: center;
+}
+.pro-content .title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.profile-widget .pro-content .title a {
+    display: inline-block;
+}
+.profile-widget .verified {
+	color: #28a745;
+	margin-left: 3px;
+}
+.profile-widget p.speciality {
+    font-size: 17px;
+    color: #757575;
+    margin-bottom: 5px;
+    min-height: 40px;
+}
+.rating {
+    list-style: none;
+    margin: 0 0 7px;
+    padding: 0;
+    width: 100%;
+}
+.rating i {
+    color: #dedfe0;
+}
+.rating i.filled {
+    color: #f4c150;
+}
+.profile-widget .rating {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.profile-widget .rating i {
+	font-size: 14px;
+}
+.available-info {
+    font-size: 17px;
+    color: #757575;
+    font-weight: 400;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.available-info li + li {
+	margin-top: 5px;
+}
+.available-info li i {
+	width: 22px;
+}
+.profile-widget {
+    box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+.col-md-3 {
+margin-bottom: 25px;
+
+}
+    </style>
+</head>
+
+<body>
+        <!--Loading Page-->
+        <!-- <div class="loading-page">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div> -->
+        <!--header section-->
+        <section class="header">
+            <!--top-bar-->
+            <div class="top-bar py-2">
+                <div class="container">
+                    <!--row of top-bar-->
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <!-- <a href="index.html" class="ar px-1">عربى</a>
+                            <a href="" class="en px-1">EN</a> -->
+                        </div>
+                        <div>
+                            <ul class="list-unstyled">
+                                <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                            class="fab fa-instagram"></i></a></li>
+                                <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                            class="fab fa-twitter"></i></a></li>
+                                <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                            class="fab fa-whatsapp"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="connect">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span> مرحبا بك </span> &nbsp; &nbsp;ميمي محمد
+                                </a>
+                                <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="index.html">  <i class="fas fa-home ml-2"></i>الرئيسيه</a>
+                                  <a class="dropdown-item" href="#"> <i class="fas fa-user-alt ml-2"></i>معلوماتى</a>
+                                  <!-- <a class="dropdown-item" href="#"> <i class="fas fa-bell ml-2"></i>اعدادات الاشعارات</a>
+                                  <a class="dropdown-item" href="#"> <i class="far fa-heart ml-2"></i>المفضلة</a> -->
+                                  <a class="dropdown-item" href="#"> <i class="far fa-comments ml-2"></i>ابلاغ</a>
+                                  <a class="dropdown-item" href="contact.html"> <i class="fas fa-phone ml-2"></i>تواصل معنا</a>
+                                  <a class="dropdown-item" href="#"> <i class="fas fa-sign-out-alt ml-2"></i>خروج</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!--End row-->
+                </div>
+                <!--End container-->
+            </div>
+            <!--End top-bar-->
+            <!--navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="" width="50" height="50"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">الرئيسيه <span class="sr-only">(current)</span></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">عن بنك الدم</a>
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="article-details.html">المقالات</a>
+                            </li>
+                            -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">من نحن</a>
+                            </li>
+                            <li class="nav-item cont">
+                                <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            </li>
+                            <li class="mr-lg-auto py-md-2"><a class="signin" href="signup.html">انشاء حساب جديد</a></li>
+                            <li class="pr-3"><a class="btn bg px-3" href="signin.html">دخول</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End container-->
+            </nav>
+            <!--End Nav-->
+            <!--main-header-->
+           
+            <!--End main-header-->
+        </section>
+        <!--End Header-->
+        <!--About section-->
+    <div class="container">
+        <h1 class="text-center mb-5">حجز خدمات التمريض</h1>
+        <div class="row">
+            <!-- عرض الممرضين -->
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" alt="User Image" src="https://media.istockphoto.com/id/1461280039/photo/smiling-young-asian-woman-nurse-wearing-blue-uniform-with-stethoscope-holding-hands-in.webp?b=1&s=170667a&w=0&k=20&c=-rbN1O7bGkBoGJKzHLHcOTvryjjJv9WrF9srlVqtwmc=">
+                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html">نورا علي </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض جراحي </p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, مصراتة
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الاحد,7مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $350 
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+			
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1023265394/photo/nurse-checking-patients-records-with-junior-nurse.jpg?s=1024x1024&w=is&k=20&c=tFN_jPriUia-jjG34qLPfRTXaePfLlx7pfP9PaT4qPs=" alt="صورة الممرض">                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html"> هناء السيد </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض نفسي</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, طرابلس
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الجمعة,22مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $150  
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG51cnNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html"> سارة عماد </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض نسائي </p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(3)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, بنغازي
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم السبت,12مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i>  $250 
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1204436209/photo/cheerful-nurse-checks-messages-on-smartphone-while-in-hospital-hallway.jpg?s=1024x1024&w=is&k=20&c=Ngnu6IBgZnPAmHuN97WUdG_AH2nA6Mol2HvO8h50mzw=" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html"> سحر شعبان </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض أطفال</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, سرت
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الجمعة,22مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i>$250 
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1392721264/photo/portrait-of-female-nurse-at-medical-clinic.jpg?s=612x612&w=0&k=20&c=KsDHx9gPK1_qE-L8fd-RbAEs1eMOiXPY9U20wJI9kEU=" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html">نجلاء السيد </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض رعاية منزلية</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, بنغازي
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الاربعاء,15مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $150
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1399175964/photo/portrait-of-a-mixed-race-female-doctor-holding-a-clipboard-working-at-a-hospital-with.jpg?s=612x612&w=0&k=20&c=CX0fL3TzT8WiWbZQP1nYx2HOCfmTHdJSvQQgi-qeinI=" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html"> رضوي شاكر </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض عام</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, بنغازي
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الجمعة,22مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $150
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1431118658/photo/portrait-of-smiling-nurse.jpg?s=612x612&w=0&k=20&c=s_NTbNxpO3qV_ZlldUY-qDGXrn13vNKOW8UCORRC1Zo=" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html"> سلمي هاني </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض اطفال</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, مصراتة
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الجمعة,22مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $300
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="profile-widget">
+                <div class="doc-img">
+                    <a href="doctor-profile.html">
+                        <img class="card-img-top" src="https://media.istockphoto.com/id/1413012904/photo/female-doctor-sitting-at-desk-in-office.jpg?s=1024x1024&w=is&k=20&c=wBdkDGrhbKTaIufhiZLgXMgRBdxg10zpeOzOjk44XHk=" alt="صورة الممرض">                    </a>
+                    <a href="javascript:void(0)" class="fav-btn">
+                        <!-- <i class="far fa-bookmark"></i> -->
+                    </a>
+                </div>
+                <div class="pro-content">
+                    <h3 class="title">
+                        <a href="doctor-profile.html">شيماء علي </a> 
+                        <i class="fas fa-check-circle verified"></i>
+                    </h3>
+                    <p class="speciality">تمريض جراحي</p>
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="d-inline-block average-rating">(4)</span>
+                    </div>
+                    <ul class="available-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> ليبيا, بنغازي
+                        </li>
+                        <li>
+                            <i class="far fa-clock"></i> متاح يوم الجمعة,27مارس   
+                        </li>
+                        <li>
+                            <i class="far fa-money-bill-alt"></i> $250 
+                            <i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+                        </li>
+                    </ul>
+                    <div class="row row-sm">
+                        <!-- <div class="col-6">
+                            <a href="doctor-profile.html" class="btn view-btn">View Profile</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="booking.html" class="btn book-btn">Book Now</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+       
+            <!-- نموذج الحجز -->
+       <div dir class="container">
+		<h2 class="text-center mb-5">احجز  خدمة تمريض الآن</h2>
+		<form class="booking-form">
+			<div class="form-group">
+				<label for="name">الاسم الكامل:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+				<label for="email">البريد الإلكتروني:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="phone">رقم الهاتف:</label>
+				<input type="tel" id="phone" name="phone" required>
+			</div>
+            <div class="form-group">
+                <label for="nurse">اسم الممرض :</label>
+                <select class="form-control" id="nurse" name="nurse" required>
+                    <option value="">اختر الممرض</option>
+                    <option value="nurse1">ممرض 1</option>
+                    <option value="nurse2">ممرض 2</option>
+                    <option value="nurse3">ممرض 3</option>
+                </select>
+            </div>
+			<div class="form-group">
+				<label for="date">تاريخ الحجز:</label>
+				<input type="date" id="date" name="date" required>
+			</div>
+			<div class="form-group">
+				<label for="time">وقت الحجز:</label>
+				<input type="time" id="time" name="time" required>
+			</div>
+		
+                    
+                    <button type="submit" style="background-color: #2D3E50;">حجز </button>
+		</form>
+	</div>
+        </div>
+    </div>
+    <footer>
+        <div class="main-footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="imgs/logo.png" alt="" width="100" height="100">
+                        <h5 style="color:rgb(226, 17, 17);"> الحجوزات الطبية</h5>
+                        <p style="color:powderblue;"> هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد
+                            هذا النص من مولد النص العرب حيث يمكنك ان تولد هذا النص أو
+                            العديد من النصوص الأخرى وإضافة الى زيادة عدد الحروف التى يولدها التطبيق يطلع على صورة حقيقة
+                            لتطبيق
+                            الموقع
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="px-md-5 mt-md-3">الرئيسية</h6>
+                        <ul class="list-unstyled">
+                            <li class="py-2"><a href="">عن  الحجوزات الطبية</a></li>
+                            <li class="py-2"><a href="article-details.html">المقالات</a></li>
+                            <li class="py-2"><a href="about-us.html">من نحن</a></li>
+                            <li class="py-2"><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 available">
+                        <h6 class="mb-5 mt-md-3 px-md-5">متوفر على</h6>
+                        <div class="my-3"><img src="imgs/google1.png" alt=""></div>
+                        <div class="my-3"><img src="imgs/ios1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <!--End container-->
+        </div>
+        <!--End main-footer-->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled pt-sm-3 py-md-3">
+                            <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="mx-5 py-md-3">جميع الحقوق محفوظه لـ <span> الحجوزات الطبية</span> &copy; 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="scrollUp">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery-nao-calendar.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var request = new XMLHttpRequest();
+
+        var url = "https://cors-anywhere.herokuapp.com/" + "http://ipda3-tech.com/blood-bank/api/v1/donation-requests?api_token=W4mx3VMIWetLcvEcyF554CfxjZHwdtQldbdlCl2XAaBTDIpNjKO1f7CHuwKl&page=1";
+
+        request.open('GET', url);
+
+        request.onreadystatechange = function() {
+            if( this.readyState == 4 && this.status == 200 ) {
+
+                var dataHolder = JSON.parse( this.responseText );
+                var div = document.getElementById('donations');
+                var temp = "";
+                for(var i = 0; i < dataHolder['data'].data.length; i++) {
+                   temp += '<div class="req-item my-3"><div class="row"><div class="col-md-9 col-sm-12 clearfix"><div class="blood-type m-1 float-right"><h3>'+ dataHolder['data'].data[i].blood_type.name +'</h3></div><div class="mx-3 float-right pt-md-2"><p>اسم الحالة : '+ dataHolder['data'].data[i].patient_name +'</p><p>مستشفى : '+ dataHolder['data'].data[i].hospital_name +'</p><p>المدينة : '+ dataHolder['data'].data[i].city.name +'</p></div></div><div class="col-md-3 col-sm-12 text-center p-sm-3 pt-md-5"><a href="Status-detailes.html" class="btn btn-light px-5 py-3">التفاصيل</a></div></div></div>';
+                }
+
+
+                div.innerHTML = temp;
+                // console.log(dataHolder);
+                
+                
+            }
+        };
+
+        request.send();
+
+    </script>
+</body>
+
+</html>

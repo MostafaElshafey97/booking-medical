@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap file css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Plugins file css-->
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/jquery-nao-calendar.css">
+    <!--google-font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&display=swap" rel="stylesheet">
+    <!--main file css-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title> برنامج الحجوزات الطبية</title>
+    <style>
+
+.button-link {
+    display: inline-block;
+    background-color: #2D3E50;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    width: 350px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.container a:hover {
+   
+    color: #dd1c1c;
+ 
+
+    /* .bg:hover{
+    color: #B61F22; */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!--Loading Page-->
+    <div class="loading-page">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!--header section-->
+    <section class="header">
+        <!--top-bar-->
+        <div class="top-bar py-2">
+            <div class="container">
+                <!--row of top-bar-->
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <!-- <a href="index.html" class="ar px-1">عربى</a>
+                        <a href="" class="en px-1">EN</a> -->
+                    </div>
+                    <div>
+                        <ul class="list-unstyled">
+                            <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="connect">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span> مرحبا بك </span> &nbsp; &nbsp;ميمي محمد
+                            </a>
+                            <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="index.html">  <i class="fas fa-home ml-2"></i>الرئيسيه</a>
+                              <a class="dropdown-item" href="#"> <i class="fas fa-user-alt ml-2"></i>معلوماتى</a>
+                              <!-- <a class="dropdown-item" href="#"> <i class="fas fa-bell ml-2"></i>اعدادات الاشعارات</a>
+                              <a class="dropdown-item" href="#"> <i class="far fa-heart ml-2"></i>المفضلة</a> -->
+                              <a class="dropdown-item" href="#"> <i class="far fa-comments ml-2"></i>ابلاغ</a>
+                              <a class="dropdown-item" href="contact.html"> <i class="fas fa-phone ml-2"></i>تواصل معنا</a>
+                              <a class="dropdown-item" href="#"> <i class="fas fa-sign-out-alt ml-2"></i>خروج</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </div>
+        <!--End top-bar-->
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="" width="50" height="50"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">الرئيسيه <span class="sr-only">(current)</span></a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">عن الحجوزات الطبية</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="article-details.html">المقالات</a>
+                        </li>
+                        <!--  -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">من نحن</a>
+                        </li>
+                        <li class="nav-item cont">
+                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                        </li>
+                        <li class="mr-lg-auto py-md-2"><a class="signin" href="signup.html">انشاء حساب جديد</a></li>
+                        <li class="pr-3"><a class="btn bg px-3" href="signin.html">دخول</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--End container-->
+        </nav>
+        <!--End Nav-->
+        <!--main-header-->
+        <div class="main-header">
+            <div class="slide">
+                <img src="imgs/header1.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/header2.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/header3.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/header4.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/header5.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/header6.jpg" class="d-block w-100" alt="..." width="1582" height="560">
+                <div class="slick-caption">
+                    <h4 class="my-md-3"> الحجوزات الطبية نمضى قدما لصحة أفضل</h4>
+                    <p class="pl-md-5">هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                        النص
+                        العرب</p>
+                    <button class="btn bg px-5">المزيد</button>
+                </div>
+            </div>
+        </div>
+        <!--End main-header-->
+    </section>
+    <!--End Header-->
+    <!--About section-->
+    <section class="">
+        <div class="container">
+                 <!-- <button class="button-link">حجز الاسعاف</button>
+                  <button class="button-link">حجز التمريض</button>
+                   <button class="button-link">حجز المعدات الطبية</button> -->
+                   <a href="ambulance-booking.html" class="button-link"> حجز الاسعاف</a>
+                   <a href="nursing-booking.html" class="button-link"> حجز التمريض</a>
+                   <a href="equipment-booking.html" class="button-link"> حجز المعدات الطبية</a>
+
+                   
+           
+        </div>
+       
+    </section>
+    <!--End About-->
+    <!--Articles section-->
+    <section class="articles py-5">
+        <div class="title">
+            <div class="container">
+                <h2><span class="py-1">المقالات</span> </h2>
+            </div>
+            <hr />
+        </div>
+        <div class="article-slide mt-3">
+            <div class="container">
+                <div class="arrow text-left">
+                    <button type="button" class="prev-arrow px-2 py-1"><i class="fas fa-chevron-right"></i></button>
+                    <button type="button" class="next-arrow px-2 py-1"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <div class="slick2">
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p1.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p2.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p1.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p2.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p1.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-cont">
+                        <div class="card">
+                            <img src="imgs/p2.jpg" class="card-img-top" alt="slick-img">
+                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">طرق الوقاية من الأمراض</h5>
+                                <p>هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد هذا النص من مولد
+                                    النص العرب
+                                </p>
+                                <div class="text-center"><a href="article-details.html" class="btn bg px-5">التفاصيل</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End container-->
+    </section>
+    <!--End Articles-->
+    <!--Donation-->
+   
+    <!--End Donation-->
+    <!--Contact-us-->
+    <section class="contact-us py-5 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="contact-info col-md-6 col-sm-12 text-center">
+                    <h4 class="text-center"><span class="brd">اتصل بنا </span> </h4>
+                    <p class="my-5">يمكنك الأتصال بنا للاستفسار عن معلومة وسيتم الرد عليكم</p>
+                    <div class="phone-nm mx-auto">
+                        <p class="py-3 text-right" href="">002<span class="px-3">1215454551</span>+</p>
+                        <img src="imgs/whats.png" alt="whats-phone">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End container-->
+    </section>
+    <!--End Contact-us-->
+    <!--blood-app-->
+
+    <!--End blood-app-->
+    <!--Footer-->
+    <footer>
+        <div class="main-footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="imgs/logo.png" alt="" width="100" height="100">
+                        <h5 class="my-3"> الحجوزات الطبية</h5>
+                        <p class="pl-4"> هذا النص هو مثال لنص ممكن أن يستبدل فى نفس المساحه, لقد تم توليد
+                            هذا النص من مولد النص العرب حيث يمكنك ان تولد هذا النص أو
+                            العديد من النصوص الأخرى وإضافة الى زيادة عدد الحروف التى يولدها التطبيق يطلع على صورة حقيقة
+                            لتطبيق
+                            الموقع
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="px-md-5 mt-md-3">الرئيسية</h6>
+                        <ul class="list-unstyled">
+                            <li class="py-2"><a href="">عن  الحجوزات الطبية</a></li>
+                            <li class="py-2"><a href="article-details.html">المقالات</a></li>
+                            <li class="py-2"><a href="about-us.html">من نحن</a></li>
+                            <li class="py-2"><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 available">
+                        <h6 class="mb-5 mt-md-3 px-md-5">متوفر على</h6>
+                        <div class="my-3"><img src="imgs/google1.png" alt=""></div>
+                        <div class="my-3"><img src="imgs/ios1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <!--End container-->
+        </div>
+        <!--End main-footer-->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled pt-sm-3 py-md-3">
+                            <li class="d-inline-block mx-2"><a class="facebook" href=""><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="insta" href=""><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="twitter" href=""><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li class="d-inline-block mx-2"><a class="whatsapp" href=""><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="mx-5 py-md-3">جميع الحقوق محفوظه لـ <span> الحجوزات الطبية</span> &copy; 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+    <!--scrollUp-->
+    <div class="scrollUp">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+    <!--jquery/bootstrap/main file js-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery-nao-calendar.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var request = new XMLHttpRequest();
+
+        var url = "https://cors-anywhere.herokuapp.com/" + "http://ipda3-tech.com/blood-bank/api/v1/donation-requests?api_token=W4mx3VMIWetLcvEcyF554CfxjZHwdtQldbdlCl2XAaBTDIpNjKO1f7CHuwKl&page=1";
+
+        request.open('GET', url);
+
+        request.onreadystatechange = function() {
+            if( this.readyState == 4 && this.status == 200 ) {
+
+                var dataHolder = JSON.parse( this.responseText );
+                var div = document.getElementById('donations');
+                var temp = "";
+                for(var i = 0; i < dataHolder['data'].data.length; i++) {
+                   temp += '<div class="req-item my-3"><div class="row"><div class="col-md-9 col-sm-12 clearfix"><div class="blood-type m-1 float-right"><h3>'+ dataHolder['data'].data[i].blood_type.name +'</h3></div><div class="mx-3 float-right pt-md-2"><p>اسم الحالة : '+ dataHolder['data'].data[i].patient_name +'</p><p>مستشفى : '+ dataHolder['data'].data[i].hospital_name +'</p><p>المدينة : '+ dataHolder['data'].data[i].city.name +'</p></div></div><div class="col-md-3 col-sm-12 text-center p-sm-3 pt-md-5"><a href="Status-detailes.html" class="btn btn-light px-5 py-3">التفاصيل</a></div></div></div>';
+                }
+
+
+                div.innerHTML = temp;
+                // console.log(dataHolder);
+                
+                
+            }
+        };
+
+        request.send();
+
+    </script>
+</body>
+
+</html>
